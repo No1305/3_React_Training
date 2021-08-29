@@ -17,8 +17,6 @@ class Menu extends Component{
             );
         });
 
-        console.log('Menu component render is invoked');
-
         return (
             <div className="container">
                 <div className="row">

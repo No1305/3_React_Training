@@ -1,4 +1,3 @@
-// Khai báo các thư viện
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
