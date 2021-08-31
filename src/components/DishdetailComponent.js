@@ -2,6 +2,15 @@ import { Component } from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 class DishDetail extends Component{
+
+    componentDidMount(){
+        console.log("Dishdetail Component componentDidMount invoked");
+    }
+
+    componentDidUpdate(){
+        console.log("Dishdetail Component componentDidUpdate invoked");
+    }
+
     // render dish function
     renderDish(dish){
         if(dish == null){
@@ -25,7 +34,7 @@ class DishDetail extends Component{
         }
         const showcmnts = comments.map((cmnt) => {
             return(
-                <p key={cmnt.id}>
+                <div key={cmnt.id}>
                     <p>{cmnt.comment}</p>
                     <p>--{cmnt.author},
                     &nbsp;
@@ -35,7 +44,7 @@ class DishDetail extends Component{
                             day: '2-digit'
                         }).format(new Date(cmnt.date))}
                     </p>
-                </p>
+                </div>
             );
         });
 
@@ -47,6 +56,8 @@ class DishDetail extends Component{
     }
 
     render(){
+        console.log("Dishdetail Component render invoked");
+
         const dish = this.props.dish;
         if(dish == null){
             return(<div></div>);
